@@ -1,0 +1,189 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="{{url_for('view02')}}" 
+      method=post 
+      enctype="multipart/form-data" 
+      class="form-horizontal">
+
+    <fieldset>
+
+        <legend>Contact Form</legend>
+
+        {{ form.hidden_tag() }} <!-- ou form.csrf_token ??-->
+
+        <div>
+
+            <!-- nome -->
+            <div class="form-group">
+                {{ form.nome.label(class_='control-label') }}
+                {{ form.nome(class_='form-control', placeholder='fulano de tal') }}
+            </div>
+
+            
+            {% for message in form.nome.errors %}
+              <div class="alert alert-danger fade in">Nome:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}            
+
+
+            <!-- e-mail -->
+            <div class="form-group">
+                {{ form.email.label(class='control-label') }}
+                {{ form.email(class="form-control", placeholder='fulano@gmail.com') }}
+            </div>           
+
+            
+            {% for message in form.email.errors %}
+              <div class="alert alert-danger fade in">E-mail:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+            
+            <!-- senha -->
+            <div class="form-group">
+                {{ form.senha.label(class='control-label') }}
+                {{ form.senha(class="form-control",  placeholder='1234') }}
+            </div>
+
+
+            {% for message in form.senha.errors %}
+              <div class="alert alert-danger fade in">Senha:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+
+            <!-- idade -->
+            <div class="form-group">
+                {{ form.idade.label(class='control-label') }}
+                {{ form.idade(class="form-control", placeholder='25') }}
+            </div>
+
+
+            {% for message in form.idade.errors %}
+              <div class="alert alert-danger fade in">Idade:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+
+            <!-- peso -->
+            <div class="form-group">
+                {{ form.peso.label(class='control-label') }}
+                {{ form.peso(class="form-control", placeholder='72.5') }}
+            </div>
+
+
+            {% for message in form.peso.errors %}
+              <div class="alert alert-danger fade in">Peso:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+            
+            <!-- sexo -->            
+            <div class="form-group">
+                {{ form.sexo.label(class='control-label') }}
+                <div class="radio">
+                    {{ form.sexo }}
+                </div>
+            </div>
+
+
+            {% for message in form.sexo.errors %}
+              <div class="alert alert-danger fade in">Sexo:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+
+            <!-- endereço -->
+            <div class="form-group">
+                {{ form.endereco.label(class='control-label') }}
+                {{ form.endereco(class="form-control") }}
+            </div>
+
+
+            {% for message in form.endereco.errors %}
+              <div class="alert alert-danger fade in">Endereço
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+
+            <!-- estado civil -->
+            <div class="form-group">
+                {{ form.estado_civil.label(class='control-label') }}
+                {{ form.estado_civil(class="form-control") }}
+            </div>
+
+            {% for message in form.estado_civil.errors %}
+              <div class="alert alert-danger fade in">Estado Civil:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+
+            <!-- checkbox -->
+            <div class="form-group">
+                    {{ form.aceite }}
+                    {{ form.aceite.label(class='control-label') }}
+            </div>
+            
+            {% for message in form.aceite.errors %}
+              <div class="alert alert-danger fade in">Aceite:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}            
+             
+            <!-- DateTime campo 
+                 http://www.malot.fr/bootstrap-datetimepicker/demo.php            
+            -->
+            <div class="input-append date form_datetime">
+                {{ form.dt.label(class='control-label') }}                     
+                {{ form.dt(class="form-control",readonly=true) }}
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+            
+            {% for message in form.dt.errors %}
+              <div class="alert alert-danger fade in">Data:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+            
+            <!-- File Upload -->
+            <div  class="form-group">
+                {{ form.photo.label(class='control-label') }}                     
+                {{ form.photo(class="form-control") }}
+            </div>
+            
+            {% for message in form.photo.errors %}
+              <div class="alert alert-danger fade in">Data:
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  {{ message }}
+              </div>
+            {% endfor %}
+
+            {{ form.submit(class="btn btn-primary") }}
+
+        </div>
+
+    </fieldset>
+
+</form>
+
+{% endblock %}

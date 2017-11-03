@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block conteudo %}
+<div class="jumbotron">
+	<h1>Home Page</h1>
+	{% if usuario %}
+		<h2>Olá, {{ usuario }}</h2>
+	{% endif %}
+</div>
+{% endblock %}

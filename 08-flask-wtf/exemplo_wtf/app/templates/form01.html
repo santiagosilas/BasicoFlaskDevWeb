@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form method="POST"
+      action="{{ url_for('view01') }}">
+
+    {{ form.hidden_tag() }}
+
+    {{ form.nome.label }} {{ form.nome(size=20) }}
+
+    {{ form.submit(class="btn btn-danger") }}
+
+</form>
+
+{% endblock %}

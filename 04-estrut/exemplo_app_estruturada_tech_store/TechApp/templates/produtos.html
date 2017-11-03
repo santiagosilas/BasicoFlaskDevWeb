@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block conteudo %}
+<div class="jumbotron center-block">
+	<h1>Lista de Produtos</h1>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Qtde</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in Lista %}
+			{% if item.qtde >= 5 %}
+            <tr>
+				<td><a href="{{url_for('produto', id=item.id)}}">
+					{{item.nome}}
+					</a>
+				</td>
+				<td>{{item.qtde}}</td>
+			</tr>
+			{% else %}
+            <tr class="text-danger">
+				<td>{{item.nome}}</td>
+				<td>{{item.qtde}}</td>
+			</tr>
+			{% endif %}			
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

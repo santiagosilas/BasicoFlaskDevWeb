@@ -1,0 +1,19 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+    <h2>{{ usuario.nome }}</h2>
+    <h3>{{ usuario.email }}</h3>
+    <h3>{{ usuario.telefone }}</h3>
+    <a  class="btn btn-danger" 
+        href="{{url_for('usuario_remover', id = usuario.id)}}"> 
+        Remover 
+    </a>
+    <br>
+    <a  class="btn btn-warning" 
+        href="{{url_for('usuario_atualizar', id = usuario.id)}}"> 
+        Atualizar
+    </a>
+{% endblock %}
+
+
+
+

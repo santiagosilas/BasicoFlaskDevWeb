@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flask + Ajax</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+	<!-- SCRIPT_ROOT armazena o caminho para a aplicação -->
+	<script type=text/javascript>
+  		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	</script>
+
+	<!-- arquivos javascript -->
+	<script  src="{{url_for('static', filename='js/script1.js') }}"></script>
+	<script  src="{{url_for('static', filename='js/script2.js') }}"></script>
+	<script  src="{{url_for('static', filename='js/test_link.js') }}"></script>
+</head>
+<body>
+	<h3>Learning Flask + jQuery + AJAX + JSON</h3>
+	<h4>Example</h4>
+	
+	<a href="#" id="a1" onclick="change_status(1)"><span>paid</span></a>
+	<a href="#" id="a2" onclick="change_status(2)"><span>paid</span></a>
+
+
+	<h4>Forms</h4>
+	<form  method="get" id="form_send">
+		<input type="text" name="info">
+		<input type="submit" value="send with ajax and get" id="btn_send">
+	</form>
+
+	<form  method="post" id="form_send2">
+		<input type="text" name="info2">
+		<input type="submit" value="send with ajax and post" id="btn_send2">
+	</form>
+
+	
+
+</body>
+</html>

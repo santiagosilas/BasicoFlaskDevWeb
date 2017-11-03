@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block conteudo %}
+<div class="jumbotron">
+	{% if produto %}
+	<ul class="text-center">
+		<li>{{produto.id}}</li>
+		<li>{{produto.nome}}</li>
+		<li>{{produto.qtde}}</li>	
+	</ul>
+	{% else %}
+	<div class="alert alert-danger">
+		<h1>Produto não existe!</h1>	
+	</div>	
+	{% endif %}
+</div>
+{% endblock %}

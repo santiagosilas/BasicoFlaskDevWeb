@@ -1,0 +1,7 @@
+{% extends "layout.html" %} {% block content %}
+<form method="post" 
+      action="{{url_for('u_buscar_post')}}">
+    <input name="search" type="text">
+    <input type="submit" value="Ir">
+</form>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block content %}
+<form method="post" action="{{url_for('usuario_inserir')}}">
+    <div>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" placeholder="Nome" value="Fulano">
+    </div>
+
+    <div>
+        <label for="telefone">Telefone</label>
+        <input type="text" name="telefone" placeholder="Telefone" value="(88) 9999-9999">
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email" value="fulano@fulano.com">
+    </div>
+
+    <div>
+        <label for="logradouro">Logradouro</label>
+        <input type="text" name="logradouro" placeholder="Logradouro" value="Rua X" /><br>
+    </div>
+
+    <div>
+        <label for="numero">Número</label>
+        <input type="text" name="numero" placeholder="Número" value="111" /><br>
+    </div>
+
+    <div>
+        <label for="complemento">Complemento</label>
+        <input type="text" name="complemento" placeholder="Complemento" value="Apt 2222" /><br>
+    </div>
+
+    <div>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" placeholder="Senha" value="12345" /><br>
+    </div>
+
+    <div>
+        <label for="notificar_me">Notificar me</label>
+        <input type="checkbox" name="notificar_me" value="" checked>Receber notificações</input><br>
+    </div>
+
+    <div>
+        <label for="sexo">Sexo</label>
+        <input type="radio" name="sexo" value="M" checked> Masculino </input>
+        <input type="radio" name="sexo" value="F"> Feminino </input>
+    </div>
+
+    <div>
+        <label for="data_nasc">Data de Nascimento</label>
+        <input type=date name="data_nasc" value="1980-07-01"><br>
+    </div>
+
+    <div>
+        <label for="estado_civil">Estado Civil</label>
+            <select name="estado_civil">
+                    {% for codigo in estados_civis %}
+                        <option value="{{codigo}}">
+                            {{estados_civis[codigo]}}
+                        </option>
+                    {% endfor %}
+            </select>
+    </div>
+
+    <div>
+        <input type="submit" value="novo usuário" />
+    </div>
+
+</form>
+
+{% endblock %}
