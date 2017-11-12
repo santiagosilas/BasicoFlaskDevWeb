@@ -1,24 +1,29 @@
-# BasicoFlaskDevWeb
+BasicoFlaskDevWeb
+===================
 
-Exemplos da apostila de Flask (Em Desenvolvimento)
+Exemplos do *ebook* ***O BÁSICO DO FRAMEWORK FLASK PARA DESENVOLVIMENTO WEB: INTRODUÇÃO AO MICROFRAMEWORK FLASK COM PYTHON 3***.
 
-1	Introdução ao Flask
+Todo código neste livro deve também ser considerado sob a licença *MIT*.
 
-2	Rotas em Flask
+Os exemplos no repositório estão organizados da seguinte forma:
 
-3	Engine de Templates Jinja2
+1.	Introdução ao Flask
 
-4	Estruturando a aplicação Flask em um pacote
+2.	Rotas em Flask
 
-5	Flashed Messages: Mensagens Informativas ao Usuário
+3.	Engine de Templates Jinja2
 
-6	Sessões
+4.	Estruturando a aplicação Flask em um pacote
 
-7	Flask-SqlAlchemy
+5.	Flashed Messages: Mensagens Informativas ao Usuário
 
-8	Formulários com Flask-WTF
+6.	Sessões
 
-9	Flask-Login
+7.	Flask-SqlAlchemy
 
-10	Flask-Admin
+8.	Formulários com Flask-WTF
+
+9.	Flask-Login
+
+---------------------------
 
