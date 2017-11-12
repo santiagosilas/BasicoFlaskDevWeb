@@ -1,0 +1,93 @@
+﻿ {% extends "layout.html" %} {% block content %}
+
+ <form method="post" class=""
+    action="{{url_for('usuario_inserir')}}">
+
+    <fieldset class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" class="form-control" placeholder="Nome" value="Fulano">
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" name="telefone"  class="form-control" placeholder="Telefone" value="(88) 9999-9999">
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email"  class="form-control" placeholder="Email" value="fulano@fulano.com">
+        <small id="emailHelp" class="form-text text-muted">Não compartilharemos seu e-mail com mais ninguém!</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="logradouro">Logradouro</label>
+        <input type="text" name="logradouro"  class="form-control" placeholder="Logradouro" value="Rua X" />
+        <br>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="numero">Número</label>
+        <input type="text" name="numero"  class="form-control" placeholder="Número" value="111" />
+        <br>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="complemento">Complemento</label>
+        <input type="text" name="complemento"  class="form-control" placeholder="Complemento" value="Apt 2222" />
+        <br>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" class="form-control" placeholder="Senha" value="12345" />
+        <br>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="sexo">Sexo</label>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="sexo"  value="M" checked>
+                Masculino
+            </label>
+        </div>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="sexo"  value="F" checked>
+                Feminino
+            </label>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="data_nasc">Data de Nascimento</label>
+        <input type=date name="data_nasc"  class="form-control" value="1981-01-01">
+        <br>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="estado_civil">Estado Civil</label>
+        <select name="estado_civil" class="form-control">
+            {% for codigo in estados_civis %}
+            <option value="{{codigo}}">
+                {{estados_civis[codigo]}}
+            </option>
+            {% endfor %}
+        </select>
+    </fieldset>
+
+    <fieldset class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" name="notificar_me" class="form-check-input" value="" checked>
+            Receber notificações
+        </label>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Inserir usuário</button>
+
+</form>
+
+{% endblock %}
