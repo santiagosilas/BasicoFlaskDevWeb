@@ -1,24 +1,19 @@
 ﻿"""
 Campos:
-
-# StringField/TextField: Represents <input type = 'text'> HTML form element
-# BooleanField: Represents <input type = 'checkbox'> HTML form element
-# DecimalField: Textfield for displaying number with decimals
-# IntegerField: TextField for displaying integer
-# RadioField: Represents <input type = 'radio'> HTML form element
-# SelectField: Represents select form element
-# TextAreaField - Represents <testarea> html form element
-# PasswordField - Represents <input type = 'password'> HTML form element
-# SubmitField - Represents <input type = 'submit'> form element 
+    # StringField/TextField: Representa um <input type = 'text'>
+    # BooleanField: <input type = 'checkbox'>
+    # DecimalField: Textfield para números com decimais
+    # IntegerField: TextField para Inteiros
+    # RadioField: <input type = 'radio'>
+    # SelectField: <select>
+    # TextAreaField: <testarea>
+    # PasswordField: <input type = 'password'>
+    # SubmitField: <input type = 'submit'> 
 
 Validadores: from wtforms.validators import ...
-
-- DataRequired: Verifica se um campo de entrada é vazio
-- Email: Verifica se um texto em um campo segue as convenções de nomeclatura de e-mails
-- IPAddress - Valida um endereço IP em um campo de entrada
-- Length - Verifica se o tamanho de uma string em um campo de entrada está em um dado range
-- NumberRange - Valida um numero no campo de entrada em um dado intervalo
-- Valida uma URL informada no campo de entrada
+    # DataRequired: Verificar se um campo de entrada é vazio.
+    # Email: Verifica se um texto é um e-mail válido
+    # Length: Verifica se o tamanho da string está em um dado range
 """
 
 # Formulário de Cadastro

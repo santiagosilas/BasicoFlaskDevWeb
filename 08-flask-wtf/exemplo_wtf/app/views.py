@@ -1,5 +1,5 @@
 ﻿from app import app
-from flask import render_template
+from flask import render_template, redirect, url_for
 from datetime import datetime
 import os
 
@@ -30,10 +30,12 @@ def view02():
         # coleta os campos do formulário
         nome = form.nome.data
         email = form.email.data
+        # ...
 
         # salva o arquivo em ../static/photos/
         f = form.photo.data
         filename = secure_filename(f.filename)
         f.save(os.path.join(app.static_folder, 'photos', filename))
+        return redirect(url_for('home'))
 
     return render_template('form02.html', form=form)
