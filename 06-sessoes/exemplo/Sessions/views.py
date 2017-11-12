@@ -7,7 +7,7 @@ from Sessions import app
 @app.route('/')
 @app.route('/home')
 def home():
-    if session.has_key('user'):
+    if 'user' in session:
         return render_template('index.html', title='Home Page', year=datetime.now().year, user = session['user'])
     else:
         return redirect(url_for('login'))
@@ -17,7 +17,7 @@ def login():
     error = None
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password']
+        password = request.form['password'] 
         if username == 'flask' and password == 'flask':
             session['user'] = username
             return redirect(url_for('home'))
