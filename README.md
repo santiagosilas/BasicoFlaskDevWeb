@@ -1,11 +1,7 @@
 BasicoFlaskDevWeb
 ===================
 
-Exemplos do *ebook* ***O BÁSICO DO FRAMEWORK FLASK PARA DESENVOLVIMENTO WEB: INTRODUÇÃO AO MICROFRAMEWORK FLASK COM PYTHON 3***.
-
-Todo código neste livro deve também ser considerado sob a licença *MIT*.
-
-Os exemplos no repositório estão organizados da seguinte forma:
+Todo código deste repositório está sob a licença *MIT*. Os exemplos estão organizados da seguinte forma:
 
 1.	Introdução ao Flask
 
