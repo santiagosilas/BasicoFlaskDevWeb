@@ -1,0 +1,54 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Estado Civil</th>
+            <th>Telefone</th><th>Email</th>
+            <th>Sexo</th>
+            <th>Endereço</th>
+            <th>Senha</th>
+            <th>Notificar Me</th>
+            <th>Data de Nasc</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for usuario in usuarios %}
+    <tr>
+        <td>
+            <a href="{{url_for('usuario_detalhes', id = usuario.id)}}"> 
+                
+                <span class="badge badge-dark">{{ usuario.id }}</span>
+            </a>
+        </td>
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.estado_civil }}</td>
+        <td>{{ usuario.telefone }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.sexo }}</td>
+        <td>
+            {{ usuario.endereco.logradouro }}, 
+            {{ usuario.endereco.numero }}, 
+            {{ usuario.endereco.complemento }}
+        </td>
+        <td>{{ usuario.senha }}</td>
+        <td>
+            {% if usuario.notificar_me %}
+                Sim
+            {% else %}
+                Não
+            {% endif %}
+        </td>
+        <td>{{ usuario.data_nasc }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+
+
+

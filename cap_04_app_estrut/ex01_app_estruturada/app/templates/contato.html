@@ -1,0 +1,15 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+    <p><strong>Informações</strong></p>
+    <p>Telefone: {{ usuario.nome }}</p>
+    <p>Telefone: {{ usuario.telefone }}</p>
+    <p>E-mail: {{ usuario.email }}</p>
+    <p>Endereço: {{ usuario.endereco.logradouro }}</p>
+    <p>
+    <img src="{{ url_for('static', filename='img/perfil.png') }}"
+         width="100"
+         height="100" />
+    </p>
+{% endblock %}
+
+
