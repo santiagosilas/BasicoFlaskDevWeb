@@ -1,0 +1,10 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Uso de sessões e Flask Framework</h1>
+    {% if user %}
+        <div class="alert alert-success">
+            <p> Olá, {{ user }} </p>
+        </div>
+    {% endif %}
+{% endblock %}
