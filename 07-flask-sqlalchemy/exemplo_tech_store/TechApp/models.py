@@ -84,7 +84,6 @@ class Disciplina(db.Model):
 
 obter_lojas = lambda: Loja.query.all()
 
-
 def inserir_loja(titulo):
     loja = Loja(titulo)
     db.session.add(loja)
